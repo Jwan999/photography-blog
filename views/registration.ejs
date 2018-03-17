@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link href="stylesheets/style.css" rel="stylesheet" type="text/css">-->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <title>Photography</title>
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6U3HnWDlJ57dBvyKW6TrO4LGhRcn2TkvCd78EcYreO4e76TJh" />
+
+    <style>
+        div.jumbotron {
+            border-style: solid;
+        }
+
+        p.countdown {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            border: solid;
+            color: #499396;
+        }
+
+        body {
+            background-color: #499396;
+        }
+
+        .container {
+            background-color: floralwhite;
+            margin-top: 50px;
+            border-radius: 3%;
+
+        }
+
+        .jumbotron {
+            /*background-image: url("photography/public/images/download (1).jpg");*/
+            /*background-repeat: no-repeat;*/
+            /*background-attachment: fixed;*/
+            border-radius: 1%;
+
+        }
+
+        div.card {
+            opacity: 0.8;
+            filter: alpha(opacity=50); /* For IE8 and earlier */
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="el">
+    <nav class="navbar navbar-expand-lg navbar-light" style="opacity:0.8">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--<a class="navbar-brand" href="#">Navbar</a>-->
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:3000/Ads">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:3000/registration">registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:3000/photos">photos</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+
+            </form>
+            <!--<h1>something</h1>-->
+
+        </div>
+        <a class="navbar-brand" href="#">Navbar</a>
+
+    </nav>
+
+
+    <br>
+    <br>
+
+    <div class="id">
+        <div id="jumbo" class="jumbotron" style="background-image: url('images/photographers-checklist.png')">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-12 justify-content-center">
+                        <div class="row">
+
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" role="button"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                    Register
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                             data-parent="#jumbo ">
+                            <!--here-->
+                            <div class="md-form input-group pl-0 mb-4">
+                                <input v-model="user.name" type="text" class="form-control py-0" placeholder="Full name"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                </div>
+                            </div>
+                            <div class="md-form input-group pl-0 mb-4">
+                                <input type="text" class="form-control py-0"
+                                       placeholder="Photography to you is?">
+
+                                <div class="input-group-append">
+
+                                    <select class="custom-select" id="inputGroupSelect02">
+                                        <option selected>Choose...</option>
+                                        <option value="1">Hobby</option>
+                                        <option value="2">Work</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <!--link-->
+                            <!--link-->
+                            <!--link-->
+                            <!--link-->
+                            <!--link-->
+                            <!--link-->
+                            <!--link-->
+                            <!--link-->
+                            <!--the photo's link-->
+                            <div class="md-form input-group pl-0 mb-4">
+                                <input v-model="user.src" type="text" class="form-control py-0"
+                                       placeholder="Add the link of the picture"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                       @keyup.enter="addImage($event)">
+                                <!--<button class="btn btn-outline-secondary" type="button" >Add-->
+                                <!--</button>-->
+                            </div>
+
+                            <div class="md-form input-group pl-0 mb-4">
+                                <input v-model="user.email" type="text" class="form-control py-0"
+                                       placeholder="Your email"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                </div>
+                            </div>
+
+                            <div class="md-form input-group pl-0 mb-4">
+                                <input v-model="user.notes" type="text" class="form-control py-0"
+                                       placeholder="Add some other details"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                </div>
+
+                            </div>
+                            <p>P.S: you can register more than once.</p>
+
+                            <button data-dismiss="#collapseThree" id="save" @click="addNewUser" type="button"
+                                    class="btn btn-outline-secondary btn-rounded waves-effect">Save
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <!--check your registration card-->
+            <div class="card">
+                <div class="card-body">
+                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                            data-target="#collapseFour"
+                            aria-expanded="false" aria-controls="collapseThree" onclick="getPage()">
+                        Check and edit your registration
+                    </button>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
+                         data-parent="#accordion">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <div class="col-md-9 col-2">
+
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">link</th>
+                                    <th scope="col">details</th>
+                                    <th scope="col">Your email</th>
+                                    <th scope="col">Actions</th>
+                                </div>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <div class="col-md-12 col-2">
+
+                                <tr v-for="(user,index) in users">
+                                    <td style="font-size:1vw ">{{index + 1}}</td>
+                                    <td style="font-size:1vw ">{{user.name}}</td>
+                                    <td style="font-size:1vw ">{{user.src}}</td>
+                                    <td style="font-size:1vw ">{{user.notes}}</td>
+                                    <td style="font-size:1vw ">{{user.email}}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button id="action" class="btn btn-info dropdown-toggle py-2"
+                                                    style="padding: 14px;margin: auto" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <div class="row justify-content-center">
+                                                    <button @click="removeUser(user._id)" type="button"
+                                                            class="btn btn-sm btn-outline-danger btn-rounded waves-effect">
+                                                        Delete
+                                                    </button>
+                                                    <button data-target="#editingModal" type="button"
+                                                            class="btn btn-sm btn-outline-secondary btn-rounded waves-effect"
+                                                            @click="merge(user)"
+                                                            data-toggle="modal"
+                                                    >Edit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                </tr>
+                            </div>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--modal-->
+        <!--editing <modal-->
+        <div class="modal fade" id="editingModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!--here-->
+                    <!--here-->
+                    <div class="modal-body">
+
+                        <div class="md-form input-group pl-0 mb-4">
+                            <input v-model="editUser.name" type="text" class="form-control py-0" placeholder="Full name"
+                                   aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                            </div>
+                        </div>
+
+                        <!--link-->
+                        <!--link-->
+                        <!--link-->
+                        <!--link-->
+                        <!--link-->
+                        <!--link-->
+                        <!--link-->
+                        <!--link-->
+                        <!--the photo's link-->
+                        <div class="md-form input-group pl-0 mb-4">
+                            <input v-model="user.src" type="text" class="form-control py-0"
+                                   placeholder="Add the link of the picture"
+                                   aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                   @keyup.enter="addImage($event)">
+                            <!--<button class="btn btn-outline-secondary btn-rounded waves-effect"-->
+                            <!--&gt;-->
+                            <!--Add-->
+                            <!--</button>-->
+
+                            <!--<div class="input-group-append">-->
+                            <!--</div>-->
+                        </div>
+
+                        <div class="md-form input-group pl-0 mb-4">
+                            <input v-model="editUser.email" type="text" class="form-control py-0"
+                                   placeholder="Your email"
+                                   aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                            </div>
+                        </div>
+
+                        <div class="md-form input-group pl-0 mb-4">
+                            <input v-model="editUser.notes" type="text" class="form-control py-0"
+                                   placeholder="Add some other details"
+                                   aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="getPage()" @click="editingUser" type="button" class="btn btn-primary">Save
+                        </button>
+
+                        <button onclick="getPage()" type="button"
+                                class="btn btn-outline-secondary btn-rounded waves-effect"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--the quote-->
+        <br>
+    </div>
+
+    <br>
+    <br>
+    <!--countdown 'till the deadline-->
+    <div class="row justify-content-end">
+        <div class="col-md-12">
+            <p class="time"><b>Time left until the deadline.</b></p>
+        </div>
+    </div>
+    <div class="row justify-content-center ">
+        <div class="col-md-8">
+            <p class="countdown" id="countdown"></p>
+        </div>
+    </div>
+    <br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+<!--countdown thing-->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("march 24, 2018 12:00:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="countdown"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+<!--API-->
+<script>
+
+    function getPage() {
+        axios.get('/api/registration').then(function (response) {
+            app.users = response.data;
+        });
+    }
+
+    // function hide (){
+    //     if(src==""){
+    //         return()
+    //     }
+    // }
+
+    var app = new Vue({
+        el: "#el",
+        data: {
+            users: [],
+            user: {
+                name: "",
+                src: "",
+                notes: "",
+                email: "",
+                option: ""
+            }
+            ,
+            editUser: {
+                name: "",
+                src: "",
+                notes: "",
+                email: "",
+            }
+        },
+        methods: {
+
+            addNewUser: function () {
+                if (this.user.name == "" &&
+                    // this.user.src == "" &&
+                    this.user.email == "") alert("i'll bite your finger if you do it again!!")
+                else if (this.user.name == "") alert("Add your name first")
+                // else if (this.user.src == "") alert("Add the link first")
+                else if (this.user.email == "") alert("Add your email first")
+
+
+                else {
+                    axios.post('/api/registration', {
+                        user: this.user
+                    }).then(function (response) {
+                            alert(response.data.message)
+
+                        }
+                    )
+                }
+            },
+            merge: function (user) {
+                this.editUser = user
+            },
+
+            // addImage: function (src) {
+            //     this.src = src
+            //     this.links.push(src)
+            // }
+
+            addImage: function ($event) {
+                this.user.src = $event.target.value;
+            }
+
+
+            , editingUser: function () {
+                axios.put('/api/registration', {user: this.editUser}).then(function (response) {
+                        alert(response.data.message)
+                    }
+                )
+                getPage();
+            },
+
+            removeUser:
+                function (id) {
+                    axios.delete('/api/registration', {
+                        params: {
+                            id: id
+                        }
+                    }).then(function (response) {
+                        if (response.data.isSuccess) {
+                            getPage()
+                        }
+                    })
+                }
+
+
+        },
+
+        mounted: function () {
+            getPage()
+        }
+    })
+</script>
+
+</body>
+</html>
