@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--<link href="stylesheets/style.css" rel="stylesheet" type="text/css">-->
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:100" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
     <title>Photography</title>
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6U3HnWDlJ57dBvyKW6TrO4LGhRcn2TkvCd78EcYreO4e76TJh" />
+    <link rel="shortcut icon"
+          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6U3HnWDlJ57dBvyKW6TrO4LGhRcn2TkvCd78EcYreO4e76TJh"/>
 
     <style>
         div.jumbotron {
@@ -21,18 +23,37 @@
             font-size: 60px;
             margin-top: 0px;
             border: solid;
-            color: #499396;
+            color: #4A8394;
+            font-family: 'Advent Pro', sans-serif;
+
+        }
+
+        .time {
+            font-family: 'Advent Pro', sans-serif;
+            font-size: 30px;
+        }
+
+        #footer {
+            font-family: 'Advent Pro', sans-serif;
+            font-size: 30px;
+            text-shadow: 0 0 3px #3393A9, 0 0 5px #3393A9;
+
         }
 
         body {
-            background-color: #499396;
+            background-color: #4A8394;
+            font-weight: bolder;
         }
 
         .container {
-            background-color: floralwhite;
-            margin-top: 50px;
-            border-radius: 3%;
+            margin-top: 30px;
+            /*#499396*/
+            background-color: ghostwhite;
+            /*opacity: 0.9;*/
+            /*border-radius: 3%;*/
+            /*height: 500px;*/
 
+            box-shadow: 0 0 3px #3393A9, 0 0 5px #3393A9;
         }
 
         .jumbotron {
@@ -47,45 +68,53 @@
             opacity: 0.8;
             filter: alpha(opacity=50); /* For IE8 and earlier */
         }
+
+        h5 {
+            color: #4A8394;
+
+        }
+
     </style>
 </head>
 <body>
 <div class="container" id="el">
-    <nav class="navbar navbar-expand-lg navbar-light" style="opacity:0.8">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--<a class="navbar-brand" href="#">Navbar</a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!--<a class="navbar-brand" href="#">Navbar</a>-->
+        <img class="navbar-brand" src="images/camera-sketch-photography-logo-template-01-.png" href="#">
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/Ads">home</a>
+                    <a class="nav-link" style="font-weight: bolder;            font-family: 'Advent Pro', sans-serif;
+" href="http://localhost:3000/Ads"><b>Home</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/registration">registration</a>
+                    <a class="nav-link " style="font-weight: bolder;            font-family: 'Advent Pro', sans-serif;
+" href="http://localhost:3000/winners"><b>Previous
+                            winners</b></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/photos">photos</a>
-                </li>
+
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-
-            </form>
-            <!--<h1>something</h1>-->
-
         </div>
-        <a class="navbar-brand" href="#">Navbar</a>
 
     </nav>
+    <br>
+    <!--<div class="row justify-content-center">-->
+    <!--<img v-for="src in srcs" class="card-img-top" :src="user.src" alt="Card image cap">-->
 
 
+    <!--</div>-->
+    <!--</div>-->
     <br>
     <br>
-
-    <div class="id">
-        <div id="jumbo" class="jumbotron" style="background-image: url('images/photographers-checklist.png')">
+    <div class="row justify-content-center">
+        <div id="jumbo" class="jumbotron"
+             style="background-image: url('images/photographers-checklist.png'); width: 700px">
             <div class="card">
                 <div class="card-body">
                     <div class="col-md-12 justify-content-center">
@@ -94,8 +123,8 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" data-toggle="collapse"
                                         data-target="#collapseThree" role="button"
-                                        aria-expanded="false" aria-controls="collapseThree">
-                                    Register
+                                        aria-expanded="false" aria-controls="collapseThree"><b>Register</b>
+
                                 </button>
                             </h5>
                         </div>
@@ -176,14 +205,14 @@
                     <button class="btn btn-link collapsed" data-toggle="collapse"
                             data-target="#collapseFour"
                             aria-expanded="false" aria-controls="collapseThree" onclick="getPage()">
-                        Check and edit your registration
+                        <b> Check and edit your registration</b>
                     </button>
                     <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
                          data-parent="#accordion">
                         <table class="table">
                             <thead>
                             <tr>
-                                <div class="col-md-9 col-2">
+                                <div class="col-md-5 col-2">
 
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
@@ -195,7 +224,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <div class="col-md-12 col-2">
+                            <div class="col-md-5 col-2">
 
                                 <tr v-for="(user,index) in users">
                                     <td style="font-size:1vw ">{{index + 1}}</td>
@@ -302,7 +331,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button onclick="getPage()" @click="editingUser" type="button" class="btn btn-primary">Save
+                        <button onclick="getPage()" @click="editingUser" type="button"
+                                class="btn btn-outline-primary btn-rounded waves-effect">Save
                         </button>
 
                         <button onclick="getPage()" type="button"
@@ -315,8 +345,6 @@
             </div>
         </div>
 
-        <!--the quote-->
-        <br>
     </div>
 
     <br>
@@ -324,15 +352,24 @@
     <!--countdown 'till the deadline-->
     <div class="row justify-content-end">
         <div class="col-md-12">
-            <p class="time"><b>Time left until the deadline.</b></p>
+            <p style="color: #4A8394;" class="time"><b>Time left until the deadline.</b></p>
         </div>
     </div>
     <div class="row justify-content-center ">
         <div class="col-md-8">
             <p class="countdown" id="countdown"></p>
+            <hr>
         </div>
     </div>
     <br>
+    <div id="footer" class="row align-item-end">
+        <!--<div class="col-md-12 col-12">-->
+        <p style="font-size: 20px;color: gray ; margin-left: 1000px "><b>Any questions ?
+                <a class="text" style=" ;cursor: pointer;font-size: 20px;color: gray "
+                   href="https://web.facebook.com/jwana.alfatla">
+                    contact me</a></b></p>
+        <!--</div>-->
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -420,10 +457,10 @@
 
             addNewUser: function () {
                 if (this.user.name == "" &&
-                    // this.user.src == "" &&
+                    this.user.src == "" &&
                     this.user.email == "") alert("i'll bite your finger if you do it again!!")
                 else if (this.user.name == "") alert("Add your name first")
-                // else if (this.user.src == "") alert("Add the link first")
+                else if (this.user.src == "") alert("Add the link first")
                 else if (this.user.email == "") alert("Add your email first")
 
 
@@ -448,6 +485,7 @@
 
             addImage: function ($event) {
                 this.user.src = $event.target.value;
+                this.user.src = this.user.src
             }
 
 
@@ -458,6 +496,11 @@
                 )
                 getPage();
             },
+
+            addImage: function ($event) {
+                this.user.src = $event.target.value;
+            },
+
 
             removeUser:
                 function (id) {

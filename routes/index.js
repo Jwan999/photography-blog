@@ -23,6 +23,10 @@ router.get('/Ads', function (req, res) {
     res.render('Ads');
 });
 
+router.get('/winners', function (req, res){
+    res.render('winners');
+});
+
 router.get('/photos', function (req, res) {
     res.render('photos');
 });
@@ -70,6 +74,8 @@ router.delete('/api/registration', function (req, res) {
         });
     })
 });
+
+
 
 router.put('/api/registration', function (req, res) {
     var editing = req.param('user');
